@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #61dafb;
+    --secondary-color: #21a1f1;
+    --text-color: #ffffff;
+    --link-color: #61dafb;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #242830;
+    color: #d4d4d4;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.drum{
+    width: 25rem;
+    height: 25rem;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+#click{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15%;
+    height: 15%;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#click:active{
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.mini{
+    position: fixed;
+    margin-top: -24rem;
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(180deg);
+    z-index: 90;
+}
+
+.spin1, .spin2, .spin3, .spin4, .spin5, .spin6, .spin7, .spin8{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0% 0%, 55% 0, 100% 100%, 0 54%, 0% 100%);
+    border: 4px solid var(--text-color);
+    font-size: 15px;
+}
+
+#title{
+    transform: rotate(-130deg);
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.spin1{
+    background-color: var(--secondary-color);
+}
+
+.spin2{
+    background-color: var(--secondary-color);
+    transform: rotate(-90deg);
+
+}
+
+.spin3{
+    background-color: var(--secondary-color);
+    transform: rotate(-180deg);
+    margin-left: 200px;
+    margin-top: -200px;
+}
+
+.spin4{
+    background-color: var(--secondary-color);
+    transform: rotate(-270deg);
+    margin-left: 200px;
+    margin-top: -400px;
+}
+
+.spin5{
+    background-color: var(--secondary-color);
+    transform: rotate(45deg);
+    margin-left: 100px;
+    margin-top: -250px;
+}
+
+.spin6{
+    background-color: var(--secondary-color);
+    transform: rotate(135deg);
+    margin-left: 250px;
+    margin-top: -50px;
+}
+
+
+.spin7{
+    background-color: var(--secondary-color);
+    transform: rotate(225deg);
+    margin-left: 100px;
+    margin-top: -50px;
+}
+
+.spin8{
+    background-color: var(--secondary-color);
+    transform: rotate(315deg);
+    margin-left: -50px;
+    margin-top: -350px;
+}
+
+#finishRow{
+    position: fixed;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #15171bbe;
+}
+
+#finishRow .finish{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #242830;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.finish img{
+    width: 150px;
+    height: 150px;
+    margin-left: 2rem;
+}
+
+.finish h1, p{
+    text-align:center;
+}
+
+.finish button{
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.finish button:active{
+    background-color: var(--primary-color);
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    background-color: #2f353f;
+    color: var(--text-color);
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--link-color);
+    text-decoration: underline;
+}
+/* clip-path: polygon(0% 0%, 55% 0, 100% 100%, 0 54%, 0% 100%); */
